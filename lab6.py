@@ -1,10 +1,8 @@
 def encode(password):
     output = ""
 
-
-
-    for value in password:
-         current_val= str((int(i) + 3) % 10)
+    for i in password:
+        current_val= str((int(i) + 3) % 10)
         output += current_val
     return output
 def display_menu():
@@ -18,3 +16,11 @@ while True:
     if choice == 1:
         password = input("Please enter your password to encode:")
         print("Your password has been encoded and stored!")
+    #this was done by michael veksler
+    if choice == 2:
+        new_pas = encode(password)
+        print(f"The encoded password is {new_pas}, and the original password is {password}")
+    if choice == 3:
+        break
+
+
