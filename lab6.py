@@ -7,7 +7,12 @@ def encode(password):
     return output
 def display_menu():
     print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit")
-
+def decode_password(new_pas):
+    decode = ""
+    for i in new_pas:
+        decode_dig = str((int(i)-3)%10)
+        decode += decode_dig
+    return decode
 
 while True:
     display_menu()
@@ -19,7 +24,8 @@ while True:
     #this was done by michael veksler
     if choice == 2:
         new_pas = encode(password)
-        print(f"The encoded password is {new_pas}, and the original password is {password}")
+        old_pas = decode_password(new_pas)
+        print(f"The encoded password is {new_pas}, and the original password is {old_pas}")
     if choice == 3:
         break
 
